@@ -17,14 +17,12 @@
        PROCEDURE DIVISION.
 
        MENU.
-
            DISPLAY "Bienvenido a su  cajero virtual."
            DISPLAY "1. Ingresa dinero en cuenta."
            DISPLAY "2. Retirar dinero."
            DISPLAY "Cualquier tecla para salir."
            DISPLAY "Ingrese la opcion: "
            ACCEPT OPCION
-
 
            EVALUATE TRUE
            WHEN OPCION = 1
@@ -43,12 +41,11 @@
                COMPUTE SALDO-INICIAL = SALDO-INICIAL - RETIRO
                DISPLAY "Dinero en cuenta: " SALDO-INICIAL
            END-IF
-           GO TO MENU
+           PERFORM MENU
 
            WHEN OTHER
            DISPLAY "Adios."
            END-EVALUATE
            STOP RUN.
-
 
        END PROGRAM CAJERO-VIRTUAL.
